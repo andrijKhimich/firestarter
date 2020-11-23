@@ -1,0 +1,60 @@
+// header styles
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid $borderColor;
+  color: $white;
+  z-index: 1;
+
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btn {
+      margin-right: 30px;
+    }
+  }
+}
+
+.logo {
+  max-width: 197px;
+}
+
+.phone {
+  letter-spacing: .08em;
+  margin-right: 26px;
+}
+
+.nav {
+  margin-right: 35px;
+  margin-left: auto;
+
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      font-weight: 400;
+      padding: 57px 34px;
+
+      &:not(:last-child) {
+        border-left: 1px solid $borderColor;
+      }
+
+      &:not(:first-child) {
+        border-right: 1px solid $borderColor;
+      }
+
+      a {
+        transition: color .4s ease;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
