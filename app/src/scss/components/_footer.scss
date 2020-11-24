@@ -1,1 +1,14 @@
 // footer styles
+.footer {
+  padding: 25px 0;
+  border-top: 1px solid $grayLight;
+  font-weight: 400;
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      padding: 0 40px;
+    }
+  }
+}

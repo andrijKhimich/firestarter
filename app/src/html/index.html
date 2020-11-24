@@ -403,6 +403,106 @@
           </div>
         </div>
       </section>
+      <section class="contacts">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="section-title">
+                <h2 class="title-2">Contact Us</h2>
+              </div>
+              <div class="contacts__address">
+                <h4 class="title-4">
+                  United states office
+                </h4>
+                <address class="address">
+                  <div class="address__item">
+                    <p class="address__description">
+                      Address:
+                    </p>
+                    <p class="address__value">
+                      2629 W. Main Street <br>
+                      #125 Littleton, CO 80120
+                    </p>
+                  </div>
+                  <div class="address__item">
+                    <p class="address__description">
+                      Phone:
+                    </p>
+                    <p class="address__value">
+                      (303) 909-6698
+                    </p>
+                  </div>
+                  <div class="address__item">
+                    <p class="address__description">
+                      Social:
+                    </p>
+                    <ul class="social-list">
+                      <li>
+                        <a href="https://www.facebook.com/" target="_blank">
+                          <svg class="svg-social">
+                            <use xlink:href="img/svg/sprite-svg/sprite.svg#facebook">
+                            </use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.facebook.com/" target="_blank">
+                          <svg class="svg-social">
+                            <use xlink:href="img/svg/sprite-svg/sprite.svg#instagram">
+                            </use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </address>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="contacts__container">
+                <div class="contacts-banner" style="background-image: url(img/home/contact.jpg);">
+                </div>
+                <form class="contacts-form">
+                  <h4 class="title-4">Sign up for a FREE consultation</h4>
+                  <div class="contacts-form__row">
+                    <div class="contacts-form__group">
+                      <input type="text" id="contactFullName" class="contacts-form__input" placeholder="Your Full Name"
+                        autocomplete="off">
+                      <label for="contactFullName" class="contacts-form__label">Your Full Name</label>
+                      <span class="error-message">This field is requered!</span>
+                    </div>
+                    <div class="contacts-form__group">
+                      <input type="text" id="contactPhoneNunber" class="contacts-form__input" placeholder="Phone Number"
+                        autocomplete="off">
+                      <label for="contactPhoneNunber" class="contacts-form__label">Phone Number</label>
+                      <span class="error-message">This field is requered!</span>
+                    </div>
+                  </div>
+                  <div class="contacts-form__row">
+                    <div class="contacts-form__group">
+                      <input type="email" id="contactEmail" class="contacts-form__input" placeholder="Email Address"
+                        autocomplete="off">
+                      <label for="contactEmail" class="contacts-form__label">Email Address</label>
+                      <span class="error-message">This field is requered!</span>
+                    </div>
+                    <div class="contacts-form__group">
+                      <input type="text" id="contactComapanyName" class="contacts-form__input"
+                        placeholder="Your Company Name" autocomplete="off">
+                      <label for="contactComapanyName" class="contacts-form__label">Your Company Name</label>
+                      <span class="error-message">This field is requered!</span>
+                    </div>
+                  </div>
+                  <button class="btn" type="submit">Send the message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <svg  >
+        <use xlink:href="img/svg/sprite-svg/sprite.svg#logo">
+        </use>
+      </svg>
     </main>
     @@include('components/_footer.html')
   </div>
