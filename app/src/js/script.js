@@ -1,18 +1,18 @@
 const humburger = $(".js-humburger");
-const headerMenu = $(".menu");
-const scrollBtn = $(".scroll-btn");
-const header = $(".header");
-const logoImg = $(".logo img");
+const headerMenu = $(".nav");
+// const scrollBtn = $(".scroll-btn");
+// const header = $(".header");
+// const logoImg = $(".logo img");
 
-function setInnerHeader() {
-  logoImg.attr("src", logoBlackUrl);
-  header.addClass("header_inner");
-}
+// function setInnerHeader() {
+//   logoImg.attr("src", logoBlackUrl);
+//   header.addClass("header_inner");
+// }
 
-function setHomeHeader() {
-  logoImg.attr("src", logoMainUrl);
-  header.removeClass("header_inner");
-}
+// function setHomeHeader() {
+//   logoImg.attr("src", logoMainUrl);
+//   header.removeClass("header_inner");
+// }
 // function showOnScroll(scrollValue) {
 //   $('.js-scroll').each(function () {
 //     let elem = $(this);
@@ -35,45 +35,66 @@ function setHomeHeader() {
 //   });
 // }
 
-// function openMenu() {
-//   humburger.addClass('open');
-//   headerMenu.addClass('open');
-// }
+function openMenu() {
+  humburger.addClass('open');
+  headerMenu.addClass('open');
+}
 
-// function closeMenu() {
-//   humburger.removeClass('open');
-//   headerMenu.removeClass('open');
-// }
+function closeMenu() {
+  humburger.removeClass('open');
+  headerMenu.removeClass('open');
+}
 
 function showContent() {
   $(".main-wrapper").removeClass("js-fadeIn");
 }
 
 $(document).ready(function () {
+
+  humburger.click(function () {
+    if ($(this).hasClass('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
   // if ($('.inner-page').length > 0) {
   //   setInnerHeader();
   // } else {
   //   setHomeHeader();
   // }
   showContent();
-  
-$('.award-slider').slick({
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  autoplay: false,
-  infinite: false,
-  dots: false,
-  arrows: true,
-  prevArrow: $('.js-award_prev'),
-  nextArrow: $('.js-award_next')
-});
 
-  // humburger.click(function () {
-  //   if ($(this).hasClass('open')) {
-  //     closeMenu();
-  //   } else {
-  //     openMenu();
-  //   }
+  $('.award-slider').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: false,
+    infinite: false,
+    dots: false,
+    arrows: true,
+    prevArrow: $('.js-award_prev'),
+    nextArrow: $('.js-award_next'),
+    responsive: [{
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+        }
+      }, {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 2,
+        }
+      }
+    ]
+  });
+
 });
 
 // slow scroll to id
@@ -109,7 +130,15 @@ $('.testimonials-slider').slick({
   arrows: true,
   infinite: false,
   prevArrow: $('.js-testimonials_prev'),
-  nextArrow: $('.js-testimonials_next')
+  nextArrow: $('.js-testimonials_next'),
+  responsive: [{
+    breakpoint: 768,
+    settings: {
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    }
+  }]
 });
 
 // $('.award-slider').slick({
