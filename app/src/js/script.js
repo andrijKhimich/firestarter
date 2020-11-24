@@ -1,39 +1,7 @@
 const humburger = $(".js-humburger");
 const headerMenu = $(".nav");
-// const scrollBtn = $(".scroll-btn");
-// const header = $(".header");
-// const logoImg = $(".logo img");
+const menuLink = $(".nav-list li a");
 
-// function setInnerHeader() {
-//   logoImg.attr("src", logoBlackUrl);
-//   header.addClass("header_inner");
-// }
-
-// function setHomeHeader() {
-//   logoImg.attr("src", logoMainUrl);
-//   header.removeClass("header_inner");
-// }
-// function showOnScroll(scrollValue) {
-//   $('.js-scroll').each(function () {
-//     let elem = $(this);
-//     let sectionPos = elem.offset().top;
-//     let windowPos = $(window).scrollTop() + $(window).height() / 1.2;
-//     if (sectionPos < windowPos) {
-//       elem.removeClass('js-fadeIn js-slideLeft js-slideRight js-slideTop');
-//     }
-//   });
-
-//   $('.js-active').each(function () {
-//     let item = $(this);
-//     let sectionPos = item.offset().top;
-//     let windowPos = $(window).scrollTop() + $(window).height() / 2.8;
-//     if (sectionPos < windowPos) {
-//       item.addClass('active');
-//     } else {
-//       item.removeClass('active');
-//     }
-//   });
-// }
 
 function openMenu() {
   humburger.addClass('open');
@@ -59,11 +27,6 @@ $(document).ready(function () {
     }
   });
 
-  // if ($('.inner-page').length > 0) {
-  //   setInnerHeader();
-  // } else {
-  //   setHomeHeader();
-  // }
   showContent();
 
   $('.award-slider').slick({
@@ -95,32 +58,22 @@ $(document).ready(function () {
     ]
   });
 
+
+  menuLink.click(function (e) {
+    e.preventDefault();
+    let link = $($(this).attr('href'))
+    $('html, body').animate({
+      scrollTop: link.offset().top
+    }, 1000);
+  });
+
 });
 
-// slow scroll to id
 
-//   scrollBtn.click(function (e) {
-//     e.preventDefault();
-//     let link = $($(this).attr('href'))
-//     $('html, body').animate({
-//       scrollTop: link.offset().top
-//     }, 1000);
-//   });
 
-//   showOnScroll($(window).scrollTop());
-
-//   $(window).scroll(function () {
-//     const scrollValue = $(this).scrollTop();
-//     showOnScroll(scrollValue);
-//     scrollValue >= 1 ? closeMenu() : null;
-
-//     if (scrollValue > 1) {
-//       header.addClass('sticky');
-//     } else {
-//       header.removeClass('sticky');
-//       // logoImg.attr("src", logoColorUrl);
-//     }
-//   });
+$(window).scroll(function () {
+  closeMenu();
+});
 
 $('.testimonials-slider').slick({
   slidesToShow: 2,
