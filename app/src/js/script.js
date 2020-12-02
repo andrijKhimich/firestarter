@@ -19,6 +19,8 @@ function showContent() {
 
 $(document).ready(function () {
 
+  $("input.wpcf7-form-control, textarea.wpcf7-form-control").attr("autocomplete", "off");
+
   humburger.click(function () {
     if ($(this).hasClass('open')) {
       closeMenu();

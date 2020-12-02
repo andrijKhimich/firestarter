@@ -89,14 +89,12 @@
     padding-bottom: 16px;
     margin-bottom: 10px;
 
-    &:last-of-type {
-      margin-bottom: 25px;
+    br {
+      display: none;
     }
 
-    &.error {
-      .error-message {
-        opacity: 1;
-      }
+    &:last-of-type {
+      margin-bottom: 25px;
     }
   }
 
@@ -165,6 +163,22 @@
   font-size: 10px;
   opacity: 0;
   transition: opacity .4s ease;
+}
+
+.wpcf7-not-valid-tip {
+  position: absolute;
+  left: 10px;
+  color: tomato;
+  font-size: 10px;
+  bottom: -25px;
+}
+
+div.wpcf7 .ajax-loader {
+  display: none !important;
+}
+
+.wpcf7-response-output {
+  display: none !important;
 }
 
 .svg-icon {
@@ -472,7 +486,7 @@
       width: 120px;
       height: 115px;
 
-      picture {
+      img {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -635,12 +649,44 @@
   }
 }
 
+.wpcf7-form {
+
+  &.invalid {
+
+    // .error-message {
+    //   opacity: 1;
+    //   left: 30px;
+    // }
+    .contacts-form__input {
+      border-color: tomato;
+
+      &::-webkit-input-placeholder {
+        color: tomato;
+      }
+
+      &::-moz-placeholder {
+        color: tomato;
+      }
+
+      &:-ms-input-placeholder {
+        color: tomato;
+      }
+
+      &::placeholder {
+        color: tomato;
+      }
+    }
+  }
+
+}
+
 .contacts-form {
   padding: 103px 0 0 55px;
 
   @include d(991) {
     padding: 60px 0 0 0;
   }
+
 
   .btn {
     max-width: 280px;
@@ -673,13 +719,6 @@
 
     @include d(575) {
       flex: 0 0 100%;
-    }
-
-    &.error {
-      .error-message {
-        opacity: 1;
-        left: 30px;
-      }
     }
   }
 
